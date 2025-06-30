@@ -1,0 +1,422 @@
+:root {
+    --primary: rgb(115 81 132);
+    --primary-dark: rgba(115, 81, 132, 0.696);
+    --secondary: #00b894;
+    --danger: #ff7675;
+    --warning: #fdcb6e;
+    --light: #f8f9fa;
+    --dark: #2d3436;
+    --gray: #636e72;
+    --light-gray: #dfe6e9;
+}
+
+body {
+    font-family: 'Unbounded', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, rgb(115 81 132) 10%, rgb(115 81 132, 0.696) 100%);
+    min-height: 100vh;
+    color: var(--dark);
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: rgba(115, 81, 132, 0.137);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+h1 {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+
+
+h2 {
+    color: var(--primary);
+    margin-top: 0;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.controls {
+    margin: 30px 0;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.controls button {
+    padding: 10px 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.controls button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(115, 81, 132, 0.696);
+    opacity: 0.7;
+    transition: all 0.4s ease;
+}
+
+.controls button:hover::before {
+    left: 100%;
+}
+
+.controls button:hover {
+    background: rgba(115, 81, 132, 0.696);
+    transform: translateY(-2px);
+    box-shadow: none;
+    color: white;
+}
+
+.controls button:active {
+    transform: translateY(0);
+}
+
+.note-form {
+    margin-bottom: 40px;
+    padding: 25px;
+    background: #f8f9ff;
+    border-radius: 12px;
+    box-shadow: none;
+    border: 1px solid rgba(108, 92, 231, 0.1);
+    transition: all 0.3s ease;
+}
+
+.note-form:hover {
+    box-shadow: none;
+    box-shadow: none;
+}
+
+.note-form input, .note-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.note-form input:focus, .note-form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: none;
+    outline: none;
+}
+
+.note-form textarea {
+    height: 120px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+#addNote {
+    padding: 12px 25px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#addNote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--primary-dark);
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+#addNote:hover::before {
+    width: 100%;
+}
+
+#addNote:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+}
+
+#addNote:active {
+    transform: translateY(0);
+}
+
+.note {
+    background: white;
+    border-left: 5px solid var(--primary);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.note.archived {
+    opacity: 0.7;
+    background: #f8f9ff;
+    border-left-color: var(--gray);
+}
+
+.note.archived .note-title,
+.note.archived .note-content {
+    color: var(--gray);
+}
+
+.note:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.note-title {
+    font-weight: 600;
+    font-size: 1.4em;
+    margin: 0 0 10px 0;
+    color: var(--dark);
+    position: relative;
+    padding-left: 15px;
+    line-height: 1.4;
+}
+
+.note-content {
+    margin: 0 0 15px 0;
+    color: var(--gray);
+    line-height: 1.7;
+    padding: 0 10px;
+    font-size: 1.05em;
+}
+
+.note-date {
+    font-size: 0.85em;
+    color: #a7a7a7;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.note-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #e0e0e0;
+}
+
+.note-actions button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all 0.2s ease;
+    box-shadow: none;
+}
+
+.edit-btn {
+    background: var(--warning);
+    color: #2d3436;
+}
+
+.edit-btn:hover {
+    background: #fdcb6e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(253, 203, 110, 0.3);
+}
+
+.archive-btn {
+    background: var(--secondary);
+    color: white;
+}
+
+.archive-btn:hover {
+    background: #00a884;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 184, 148, 0.3);
+}
+
+.delete-btn {
+    background: var(--danger);
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #e17070;
+    transform: translateY(-2px);
+    box-shadow: none;
+}
+
+.editing .note-title,
+.editing .note-content {
+    border: 2px solid var(--primary);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.1);
+    transition: all 0.2s ease;
+}
+
+.editing .note-content {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.editing .note-actions {
+    opacity: 0.7;
+}
+
+.editing .note-title:focus,
+.editing .note-content:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.editing .note-title {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.editing .note-content {
+    height: 100px;
+    resize: vertical;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.editing .save-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 500;
+    font-size: 0.85em;
+    transition: all 0.3s ease;
+}
+
+.editing .save-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: none;
+}
+
+.editing .edit-btn, .editing .archive-btn, .editing .delete-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 20px 15px;
+        padding: 20px 15px;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .controls button {
+        width: 100%;
+    }
+    
+    .note-form {
+        padding: 20px 15px;
+    }
+    
+    .note {
+        padding: 15px;
+    }
+    
+    .note-actions {
+        flex-wrap: wrap;
+    }
+    
+    .note-actions button {
+        flex: 1;
+        min-width: 80px;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.note {
+    animation: fadeIn 1.5s ease-out forwards;
+}

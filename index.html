@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій Нотатник</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Мій Нотатник</h1>
+        
+        <div class="controls">
+            <button id="showAll">Всі нотатки</button>
+            <button id="showActive">Активні</button>
+            <button id="showArchived">Архівні</button>
+        </div>
+        
+        <div class="note-form">
+            <h2>Додати нову нотатку</h2>
+            <div class="form-group">
+                <label for="noteTitle">Заголовок</label>
+                <input type="text" id="noteTitle" placeholder="Введіть заголовок" required>
+            </div>
+            <div class="form-group">
+                <label for="noteContent">Текст нотатки</label>
+                <input type="text" id="noteContent" placeholder="Введіть текст нотатки" required>
+            </div>
+            <button id="addNote">Додати нотатку</button>
+        </div>
+        
+        <div class="notes-container">
+            <h2>Мої нотатки</h2>
+            <div id="notesList"></div>
+        </div>
+    </div>
+</body>
+</html>
