@@ -28,4 +28,4 @@
 
 1. Клонуйте репозиторій:
 ```bash
-git clone 
+git clone https://github.com/dani1kx/Notepad
