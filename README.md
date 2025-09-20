@@ -14,3 +14,5 @@ Notepad надає:
 ## Особливості
 
 - **Гарний дизайн** 
+
+👋dani1kx its... Developer, Designer, Beatmaker, Artist & Media.
