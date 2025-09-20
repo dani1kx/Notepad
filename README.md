@@ -16,4 +16,4 @@ Notepad надає:
 - **Гарний дизайн** 
 
 ## 
-👋dani1kx its... Developer, Designer, Beatmaker, Artist & Media.
+# 👋dani1kx its... Developer, Designer, Beatmaker, Artist & Media.
